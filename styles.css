@@ -89,7 +89,7 @@ h1, h2, h3, h4, h5, h6 {
 
 
 h1 {
-  letter-spacing : -1px;
+  letter-spacing : -0.5px;
 }
 
 
@@ -378,7 +378,7 @@ h1, h2, h3, h4, h5, h6,
 
 
 h1, .h1 {
-  font-size: 2.1rem;
+  font-size: 2.2rem;
 }
 
 h2, .h2 {
@@ -9810,7 +9810,7 @@ button.bg-dark:focus {
 }
 
 .font-weight-bold {
-  font-weight: 500 !important;
+  font-weight: 700 !important;
 }
 
 .font-weight-bolder {
@@ -10142,7 +10142,7 @@ header.masthead {
   background-size: cover;
 }
 header.masthead h1 {
-  font-size: 2.2rem;
+  font-size: 2.3rem;
 }
 
 .sub-title {
@@ -10212,7 +10212,7 @@ header.masthead h1 {
 
 
 .top-banner {
-  font-family: "Malssami815", 'LotteMartHappy', "Gugi", cursive;
+  font-family: 'LotteMartHappy', "Malssami815", "Gugi", cursive;
 }
 
 

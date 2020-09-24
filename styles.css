@@ -10328,7 +10328,7 @@ header.masthead h1 {
 .ui-footer.ui-waves::after {
     left: -20%;
     right: -20%;
-    filter: drop-shadow(2px 4px 30px rgba(73, 212, 174, 0.5));
+    filter: drop-shadow(2px 4px 30px rgba(254, 206, 42, 0.5));
 }
 
 .ui-footer.ui-waves::after {

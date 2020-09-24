@@ -174,6 +174,99 @@
         </div>
         <!-- .footer-bg -->
       </footer>
+             
+             
+    <div class="modal micromodal-slide" id="modal-1" aria-hidden="true">
+        <div class="modal__overlay" tabindex="-1" data-micromodal-close>
+          <div class="ui-card shadow-xl form-card">
+            <div class="card-header pb-0">
+              <h5 class="heading">Pet' mentor 서비스가 곧 출시됩니다</h5>
+            </div>
+            <div class="card-body">
+              <p class="card-body-description">
+                지금 사전 예약하고<br />앱 출시 소식을 빠르게 받아 보세요
+              </p>
+              <!-- <p class="card-body-description">
+                지금 사전 예약 하시는 분들께는<br />앱 출시 후 문자 메세지와
+                함께<br />첫 회 스타일링 무료 쿠폰을 드립니다.
+              </p> -->
+              <!-- Form -->
+              <div class="form-group">
+                <div class="input-group">
+                  <!-- Email Input -->
+                  <input
+                    type="number"
+                    id="phone-number"
+                    class="input form-control"
+                    name="phone"
+                    placeholder="휴대폰 번호"
+                    pattern="\d*"
+                    style="box-shadow: none;"
+                  />
+                  <div class="input-group-append">
+                    <!-- Submit Button -->
+                    <button id="submit" class="btn bg-pink btn-sm">
+                      출시 알림 받기
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Scripts -->
+      <script src="assets/js/libs/jquery/jquery-3.2.1.min.js"></script>
+      <script src="assets/js/libs/slider-pro/jquery.sliderPro.min.js"></script>
+      <script src="assets/js/libs/owl.carousel/owl.carousel.min.js"></script>
+      <script src="assets/js/libs/form-validator/form-validator.min.js"></script>
+      <script src="assets/js/libs/bootstrap.js"></script>
+      <script src="assets/js/applify/build/applify.js"></script>
+      <script src="https://unpkg.com/micromodal/dist/micromodal.min.js"></script>
+      <script src="https://wzrd.in/standalone/copy-to-clipboard@latest"></script>
+  
+      <script>
+        MicroModal.init();
+      </script>
+  
+      <script>
+        $(".btn-download").click(function (e) {
+          var platform = $(e.currentTarget).data("platform");
+          $("#modal-1").data("from-platform", platform);
+        });
+      </script>
+  
+      <script>
+        $("#submit").click(function () {
+          var phone_number = $("#phone-number").val();
+          var platform = $("#modal-1").data("from-platform");
+          if (!phone_number) {
+            alert("휴대폰 번호를 입력해 주세요");
+            return;
+          }
+          $.ajax({
+            url: "https://script.google.com/macros/s/AKfycbwKqA8IkMRu_6jFIir3-dVZTiZx-9Yq0VXVQ3m2xyZrwuslpXo/exec",
+            type: "POST",
+            dataType: "json",
+            data: {
+              phone_number: phone_number,
+              platform: platform,
+            },
+            // AJAX Success
+            success: function (data) {
+              alert(
+                "사전 예약해 주셔서 감사합니다."
+              );
+              MicroModal.close("modal-1");
+              $("#phone-number").val("");
+            },
+            // AJAX Error
+            error: function () {
+              alert("에러가 발생했습니다\n다시 시도해 주세요");
+            },
+          });
+        });
+      </script>
        
         <!-- Bootstrap core JS-->
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
